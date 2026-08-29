@@ -1,0 +1,611 @@
+<style>
+  @keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes shimmerGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .site-header-v3 {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 40px;
+    border-bottom: 3px solid #00ff66;
+    box-shadow: 0 0 30px rgba(0, 255, 102, 0.35);
+    overflow: hidden;
+
+    background-color: #04120a;
+    background-image: 
+      radial-gradient(circle at 30% 50%, rgba(0, 255, 102, 0.30) 0%, transparent 55%),
+      radial-gradient(circle at 70% 50%, rgba(0, 240, 255, 0.30) 0%, transparent 55%);
+  }
+
+  .header-logo-v3 {
+    z-index: 2;
+    animation: slideInLeft 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  }
+
+  .header-logo-v3 img {
+    height: 90px;
+    width: auto;
+    display: block;
+    filter: drop-shadow(0 0 14px rgba(0, 255, 102, 0.8));
+  }
+
+  .glow-heading-v3 {
+    z-index: 2;
+    margin: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #ffffff, #00ff66, #00f0ff, #ffffff);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: 
+      slideInRight 1s cubic-bezier(0.25, 1, 0.5, 1) forwards,
+      shimmerGradient 4s infinite ease-in-out;
+    filter: drop-shadow(0 0 16px rgba(0, 255, 102, 0.7));
+  }
+
+  @media (max-width: 600px) {
+    .site-header-v3 {
+      flex-direction: column;
+      gap: 14px;
+      padding: 18px;
+      text-align: center;
+    }
+    .header-logo-v3 img { height: 75px; }
+    .glow-heading-v3 { font-size: 22px; letter-spacing: 1px; }
+  }
+</style>
+
+<header class="site-header-v3">
+  <div class="header-logo-v3">
+    <img src="logo.png" alt="Royal Electrical Work Logo">
+  </div>
+  <h2 class="glow-heading-v3">ROYAL ELECTRICAL WORK</h2>
+</header>
+<HR>
+
+
+<style>
+  @keyframes pulseGlow {
+    0% {
+      box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.6);
+    }
+    70% {
+      box-shadow: 0 0 0 14px rgba(79, 70, 229, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
+    }
+  }
+
+  .animated-location-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 32px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    text-decoration: none;
+    border-radius: 30px;
+    transition: transform 0.2s ease, background 0.3s ease;
+    animation: pulseGlow 2s infinite;
+  }
+
+  .animated-location-btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    background: linear-gradient(135deg, #4338ca, #0891b2);
+  }
+</style>
+
+<a href="https://maps.app.goo.gl/avmLoUqZ2MuzGi839" class="animated-location-btn" target="_blank" rel="noopener">
+  📍 LOCATION
+</a><style>
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animated-heading {
+  text-align: center;
+  text-decoration: underline;
+  animation: pulse 2s infinite ease-in-out;
+  
+  /* Background Box Styling */
+  background-color: #0f172a; /* Dark Midnight Blue box background */
+  color: #ffffff;            /* White text color */
+  padding: 15px 30px;        /* Spacing inside the box */
+  margin: 20px auto;         /* Centers the box on the page */
+  max-width: 400px;          /* Controls the width of the box */
+  border-radius: 10px;       /* Smooth rounded corners */
+  border: 2px solid #00e5ff; /* Cyan accent border */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow around the box */
+}
+</style>
+
+<h2 class="animated-heading"> MIXER GRINDER</h2>
+
+
+<div style="text-align:center;"><img style="width:50%;"src="MIXER.png"></div>
+<div style="
+  max-width: 380px;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #0284c7;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+">
+  <h3 style="
+    margin: 0 0 4px 0;
+    font-size: 20px;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  ">
+    <span>🛠️</span> Mixer Grinder & Jar Repair
+  </h3>
+
+  <p style="
+    margin: 0 0 16px 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: #0284c7;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  ">
+    We Repair All Brands & Models
+  </p>
+
+  <ul style="
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.8;
+  ">
+    <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+      <span style="color: #0284c7; font-weight: bold;">✓</span> Motor Repair & Full Servicing
+    </li>
+    <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+      <span style="color: #0284c7; font-weight: bold;">✓</span> Coupler Replacement
+    </li>
+    <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+      <span style="color: #0284c7; font-weight: bold;">✓</span> Blade Replacement
+    </li>
+    <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+      <span style="color: #0284c7; font-weight: bold;">✓</span> Jar Leakage & Bush Fixing
+    </li>
+    <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+      <span style="color: #0284c7; font-weight: bold;">✓</span> Spare Parts Available for All Jars
+    </li>
+    <li style="display: flex; align-items: center; gap: 8px;">
+      <span style="color: #0284c7; font-weight: bold;">✓</span> New Jars & Jar Lids Available
+    </li>
+  </ul>
+</div>
+
+<style>
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animated-heading {
+  text-align: center;
+  text-decoration: underline;
+  animation: pulse 2s infinite ease-in-out;
+}
+</style>
+
+<h2 class="animated-heading"> GEYSER </h2>
+
+<div style="text-align:center;"><img style="width:50%;" src="GEYSER.png"></div>
+<div style="
+  max-width: 380px;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #0284c7;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+">
+  <h3 style="
+    margin: 0 0 16px 0;
+    font-size: 20px;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  ">
+    <span>🛠️</span> Our Geyser Repair Services
+  </h3>
+
+  <ul style="
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.8;
+  ">
+    <li style="margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px;">
+      <span style="color: #0284c7; font-weight: bold; margin-top: 2px;">✓</span> 
+      <span>Heating Element Replacement & Tank De-Scaling / Cleaning</span>
+    </li>
+    <li style="display: flex; align-items: flex-start; gap: 8px;">
+      <span style="color: #0284c7; font-weight: bold; margin-top: 2px;">✓</span> 
+      <span>Wiring & Circuit Breaker Repairs</span>
+    </li>
+  </ul>
+</div>
+
+    
+<style>
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animated-heading {
+  text-align: center;
+  text-decoration: underline;
+  animation: pulse 2s infinite ease-in-out;
+}
+</style>
+
+<h2 class="animated-heading"> PRESSURE COOKER </h2>
+
+<div style="text-align:center;"><img style="width:70%;"src="COOK.png"></div>
+<div style="
+  max-width: 380px;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #0284c7;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+">
+  <h3 style="
+    margin: 0 0 16px 0;
+    font-size: 20px;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  ">
+    <span>🛠️</span> Pressure Cooker Repair & Spare Parts
+  </h3>
+
+  <p style="
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0284c7;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  ">
+    🔧 Spare Parts & Replacements
+  </p>
+
+  <ul style="
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.8;
+  ">
+    <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+      <span style="color: #0284c7; font-weight: bold;">✓</span> New Whistle (Weight)
+    </li>
+    <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+      <span style="color: #0284c7; font-weight: bold;">✓</span> Handles Replacement
+    </li>
+    <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+      <span style="color: #0284c7; font-weight: bold;">✓</span> Cooker Gaskets (Rubber Rings)
+    </li>
+    <li style="display: flex; align-items: center; gap: 8px;">
+      <span style="color: #0284c7; font-weight: bold;">✓</span> Safety Valve Replacement
+    </li>
+  </ul>
+</div>
+</p>
+
+<style>
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animated-heading {
+  text-align: center;
+  text-decoration: underline;
+  animation: pulse 2s infinite ease-in-out;
+}
+</style>
+
+<h2 class="animated-heading"> WET GRINDER </h2><h2 class="neon-header"> </h2>
+
+<div style="text-align:center;"><img style="width:50%;"src="GRANDER.png"></div>
+<div style="
+  max-width: 380px;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #0284c7;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+">
+  <h3 style="
+    margin: 0 0 16px 0;
+    font-size: 22px;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  ">
+    <span>🛠️</span> Wet Grinder Repair
+  </h3>
+
+  <ul style="
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    color: #334155;
+    line-height: 1.8;
+  ">
+    <li style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+      <span style="color: #0284c7; font-weight: bold;">✓</span> Motor repair & belt replacement
+    </li>
+    <li style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+      <span style="color: #0284c7; font-weight: bold;">✓</span> Switch, wire & capacitor fixes
+    </li>
+    <li style="display: flex; align-items: center; gap: 8px;">
+      <span style="color: #0284c7; font-weight: bold;">✓</span> Complete servicing & overhaul
+    </li>
+  </ul>
+</div>
+
+
+
+
+<style>
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animated-heading {
+  text-align: center;
+  text-decoration: underline;
+  animation: pulse 2s infinite ease-in-out;
+}
+</style>
+
+<h2 class="animated-heading"> IRON </h2>
+<div style="text-align:center;"><img style="width:50%;"src="IORN.png"></div>
+
+<style>
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animated-heading {
+  text-align: center;
+  text-decoration: underline;
+  animation: pulse 2s infinite ease-in-out;
+}
+</style>
+<div style="
+  max-width: 380px;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #0284c7;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+">
+  <h3 style="
+    margin: 0 0 4px 0;
+    font-size: 20px;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  ">
+    <span>🛠️</span> Iron Box Repair Services
+  </h3>
+
+  <p style="
+    margin: 0 0 16px 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: #0284c7;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  ">
+    Dry & Steam Irons Serviced
+  </p>
+
+  <ul style="
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.8;
+  ">
+
+    <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+      <span style="color: #0284c7; font-weight: bold;">✓</span> Power Cord Cable Replacement & Fixes
+    </li>
+  
+    <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+      <span style="color: #0284c7; font-weight: bold;">✓</span> Thermal Fuse & Indicator Light Fixes
+    </li>
+
+  </ul>
+</div>
+
+
+
+ 
+
+<h2 class="animated-heading"> ELECTRIC KETTLE </h2>
+<div style="text-align:center;"><img style="width:50%;"src="KETTLE.png"></div>
+
+<style>
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animated-heading {
+  text-align: center;
+  text-decoration: underline;
+  animation: pulse 2s infinite ease-in-out;
+}
+</style>
+<div style="
+  max-width: 380px;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #0284c7;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+">
+  <h3 style="
+    margin: 0 0 4px 0;
+    font-size: 20px;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  ">
+    <span>🛠️</span> Electric Kettle Repair Services
+  </h3>
+
+  <p style="
+    margin: 0 0 16px 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: #0284c7;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  ">
+    All Brands & Models Serviced
+  </p>
+
+  <ul style="
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.8;
+  ">
+    <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+      <span style="color: #0284c7; font-weight: bold;">✓</span> Heating Element Replacement
+    </li>
+    <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+      <span style="color: #0284c7; font-weight: bold;">✓</span> On/Off Switch & Thermostat Fix
+    </li>
+    <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+      <span style="color: #0284c7; font-weight: bold;">✓</span> Power Base & Cord Cable Replacement
+    </li>
+    <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+      <span style="color: #0284c7; font-weight: bold;">✓</span> Auto Cut-off & Indicator Light Repair
+    </li>
+ 
+  </ul>
+</div>
+<h2 class="animated-heading"> RICE COOKER</h2>
+<div style="text-align:center;"><img style="width:50%;"src="RICE.png"></div>
+
+<div style="
+  max-width: 380px;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #0284c7;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+">
+  <h3 style="
+    margin: 0 0 4px 0;
+    font-size: 20px;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  ">
+    <span>🛠️</span> Rice Cooker Repair Services
+  </h3>
+
+  <p style="
+    margin: 0 0 16px 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: #0284c7;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  ">
+    All Brands & Models Serviced
+  </p>
+
+  <ul style="
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.8;
+  ">
+    
+    <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+      <span style="color: #0284c7; font-weight: bold;">✓</span> Thermostat & Magnetic Switch Fix
+    </li>
+    <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+      <span style="color: #0284c7; font-weight: bold;">✓</span> Thermal Fuse & Indicator Light Repair
+    </li>
+    <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+      <span style="color: #0284c7; font-weight: bold;">✓</span> Power Socket & Cord Cable Replacement
+    </li>
+    <li style="display: flex; align-items: center; gap: 8px;">
+      <span style="color: #0284c7; font-weight: bold;">✓</span> Warm-to-Cook Switch Mechanism Fix
+    </li>
+  </ul>
+</div>
