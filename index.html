@@ -5,13 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Royal Electrical Work</title>
   <style>
+    /* Reset & Box Sizing */
+    * {
+      box-sizing: border-box;
+    }
+
     @keyframes slideInLeft {
-      from { opacity: 0; transform: translateX(-40px); }
+      from { opacity: 0; transform: translateX(-20px); }
       to { opacity: 1; transform: translateX(0); }
     }
 
     @keyframes slideInRight {
-      from { opacity: 0; transform: translateX(40px); }
+      from { opacity: 0; transform: translateX(20px); }
       to { opacity: 1; transform: translateX(0); }
     }
 
@@ -21,15 +26,27 @@
       100% { background-position: 0% 50%; }
     }
 
+    body {
+      background-color: #f4f4f9;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 50px;
+      overflow-x: hidden;
+    }
+
     .site-header-v3 {
       position: relative;
+      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 22px 40px;
+      padding: 16px 20px;
       border-bottom: 3px solid #00ff66;
-      box-shadow: 0 0 30px rgba(0, 255, 102, 0.35);
-      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 255, 102, 0.35);
       background-color: #04120a;
       background-image: 
         radial-gradient(circle at 30% 50%, rgba(0, 255, 102, 0.30) 0%, transparent 55%),
@@ -42,20 +59,21 @@
     }
 
     .header-logo-v3 img {
-      height: 90px;
+      height: 60px;
       width: auto;
       display: block;
-      filter: drop-shadow(0 0 14px rgba(0, 255, 102, 0.8));
+      filter: drop-shadow(0 0 10px rgba(0, 255, 102, 0.8));
     }
 
     .glow-heading-v3 {
       z-index: 2;
       margin: 0;
       font-family: 'Segoe UI', system-ui, sans-serif;
-      font-size: 32px;
+      font-size: 18px;
       font-weight: 900;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       text-transform: uppercase;
+      text-align: right;
       background: linear-gradient(90deg, #ffffff, #00ff66, #00f0ff, #ffffff);
       background-size: 300% 100%;
       -webkit-background-clip: text;
@@ -63,23 +81,12 @@
       animation: 
         slideInRight 1s cubic-bezier(0.25, 1, 0.5, 1) forwards,
         shimmerGradient 4s infinite ease-in-out;
-      filter: drop-shadow(0 0 16px rgba(0, 255, 102, 0.7));
-    }
-
-    @media (max-width: 600px) {
-      .site-header-v3 {
-        flex-direction: column;
-        gap: 14px;
-        padding: 18px;
-        text-align: center;
-      }
-      .header-logo-v3 img { height: 75px; }
-      .glow-heading-v3 { font-size: 22px; letter-spacing: 1px; }
+      filter: drop-shadow(0 0 10px rgba(0, 255, 102, 0.7));
     }
 
     @keyframes pulseGlow {
       0% { box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.6); }
-      70% { box-shadow: 0 0 0 14px rgba(79, 70, 229, 0); }
+      70% { box-shadow: 0 0 0 10px rgba(79, 70, 229, 0); }
       100% { box-shadow: 0 0 0 0 rgba(79, 70, 229, 0); }
     }
 
@@ -88,10 +95,9 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 12px 32px;
-      font-size: 18px;
+      padding: 12px 24px;
+      font-size: 16px;
       font-weight: 600;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #ffffff;
       background: linear-gradient(135deg, #4f46e5, #06b6d4);
       text-decoration: none;
@@ -101,14 +107,9 @@
       margin: 20px auto;
     }
 
-    .animated-location-btn:hover {
-      transform: translateY(-2px) scale(1.03);
-      background: linear-gradient(135deg, #4338ca, #0891b2);
-    }
-
     @keyframes pulse {
       0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
+      50% { transform: scale(1.02); }
       100% { transform: scale(1); }
     }
 
@@ -118,33 +119,25 @@
       animation: pulse 2s infinite ease-in-out;
       background-color: #0f172a;
       color: #ffffff;
-      padding: 15px 30px;
-      margin: 20px auto;
-      max-width: 400px;
-      border-radius: 10px;
+      padding: 12px 20px;
+      margin: 25px 15px 15px 15px;
+      font-size: 20px;
+      border-radius: 8px;
       border: 2px solid #00e5ff;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    body {
-      background-color: #f4f4f9;
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-bottom: 50px;
     }
 
     /* Slider Container */
     .slider-container {
       position: relative;
-      width: 90%;
-      max-width: 800px;
-      height: 400px;
+      width: 92%;
+      max-width: 600px;
+      height: 280px;
       overflow: hidden;
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      margin: 30px auto;
+      margin: 10px auto;
+      background: #fff;
     }
 
     .slider-track {
@@ -164,7 +157,8 @@
     .slide img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      background-color: #000;
     }
 
     .slide-title {
@@ -172,27 +166,27 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      padding: 15px 20px 45px 20px;
-      background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+      padding: 12px 15px 35px 15px;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
       color: #ffffff;
-      font-size: 20px;
+      font-size: 15px;
       font-weight: bold;
       pointer-events: none;
     }
 
     .dots-container {
       position: absolute;
-      bottom: 15px;
+      bottom: 10px;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
-      gap: 10px;
+      gap: 8px;
       z-index: 2;
     }
 
     .dot {
-      width: 12px;
-      height: 12px;
+      width: 10px;
+      height: 10px;
       background-color: rgba(255, 255, 255, 0.5);
       border-radius: 50%;
       cursor: pointer;
@@ -201,11 +195,7 @@
 
     .dot.active {
       background-color: #ffffff;
-      transform: scale(1.2);
-    }
-
-    .dot:hover {
-      background-color: rgba(255, 255, 255, 0.8);
+      transform: scale(1.3);
     }
 
     /* Info Modal Styling */
@@ -215,14 +205,15 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.7);
       display: flex;
       justify-content: center;
       align-items: center;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease;
-      z-index: 10;
+      z-index: 100;
+      padding: 20px;
     }
 
     .modal-overlay.active {
@@ -232,56 +223,83 @@
 
     .modal-card {
       background: #fff;
-      padding: 24px;
-      border-radius: 8px;
-      max-width: 450px;
-      width: 90%;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      width: 100%;
       position: relative;
       box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     }
 
     .modal-card h3 {
+      margin-top: 0;
       margin-bottom: 10px;
       color: #333;
+      font-size: 18px;
     }
 
     .modal-card p {
-      color: #666;
+      color: #555;
+      font-size: 14px;
       line-height: 1.5;
       white-space: pre-line;
+      margin-bottom: 0;
     }
 
     .close-btn {
       position: absolute;
       top: 10px;
       right: 15px;
-      font-size: 22px;
+      font-size: 24px;
       cursor: pointer;
       color: #888;
+      padding: 5px;
     }
 
     .close-btn:hover { color: #000; }
 
+    /* Service Card Styling */
     .service-card {
-      max-width: 380px;
+      width: 92%;
+      max-width: 600px;
       background: #ffffff;
-      padding: 24px;
+      padding: 18px;
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
       border-left: 5px solid #0284c7;
-      margin: 15px auto;
+      margin: 10px auto 20px auto;
+    }
+
+    /* Product Section Image Wrapper */
+    .product-img-wrap {
+      text-align: center;
+      width: 100%;
+      padding: 10px;
+    }
+
+    .product-img-wrap img {
+      width: 60%;
+      max-width: 220px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    @media (min-width: 768px) {
+      .glow-heading-v3 { font-size: 28px; }
+      .header-logo-v3 img { height: 80px; }
+      .slider-container { height: 380px; }
     }
   </style>
 </head>
 <body>
 
-  <header class="site-header-v3" style="width: 100%;">
+  <header class="site-header-v3">
     <div class="header-logo-v3">
       <img src="logo.png" alt="Royal Electrical Work Logo">
     </div>
     <h2 class="glow-heading-v3">ROYAL ELECTRICAL WORK</h2>
   </header>
-  <hr style="width: 100%; border: 0; border-top: 1px solid #ccc;">
+  <hr style="width: 100%; border: 0; border-top: 1px solid #ccc; margin: 0;">
 
   <div style="text-align: center; width: 100%;">
     <a href="https://maps.app.goo.gl/avmLoUqZ2MuzGi839" class="animated-location-btn" target="_blank" rel="noopener">
@@ -289,32 +307,26 @@
     </a>
   </div>
 
-  <!-- Image Slider Component -->
   <div class="slider-container">
     <div class="slider-track" id="sliderTrack">
-      <!-- Slide 1 -->
       <div class="slide" data-title="D-LOCK NEW JAR'S Available" data-info="1. SMALL JAR (Available Now)
 2. MEDIUM JAR (Available Now)
 3. LARGE JAR (Available Now).">
         <img src="jars.png" alt="D-LOCK NEW JAR'S">
         <div class="slide-title">D-LOCK NEW JAR'S</div>
       </div>
-      <!-- Slide 2 -->
       <div class="slide" data-title="BULLET JAR (D-LOCK)" data-info="NEW bullet jar available for NORMAL mixer which has 2 LOCK (d-lock).">
         <img src="jarss.png" alt="BULLET JAR (D-LOCK)">
         <div class="slide-title">BULLET JAR (D-LOCK)</div>
       </div>
-      <!-- Slide 3 -->
       <div class="slide" data-title="BULLET MIXER NEW JAR" data-info="NEW JAR available which fix only to BULLET MIXER.">
         <img src="bj.png" alt="BULLET MIXER NEW JAR">
         <div class="slide-title">BULLET MIXER NEW JAR</div>
       </div>
-      <!-- Slide 4 -->
       <div class="slide" data-title="BULLET JAR SPARE PARTS" data-info="Some SPARE PARTS of bullet JAR and MIXER are available.">
         <img src="bp.png" alt="BULLET MIXER SPARE PARTS">
         <div class="slide-title">BULLET MIXER SPARE PARTS</div>
       </div>
-      <!-- Slide 5 -->
       <div class="slide" data-title="JAR CAP'S AND LUBBER'S" data-info="Mixer new jar CAP'S and LUBBER'S available.">
         <img src="cap.png" alt="MIXER JAR CAP'S AND LUBBER'S">
         <div class="slide-title">JAR CAP'S AND LUBBER'S</div>
@@ -323,26 +335,24 @@
     <div class="dots-container" id="dotsContainer"></div>
   </div>
 
-  <!-- Information Modal -->
   <div class="modal-overlay" id="infoModal">
     <div class="modal-card">
-      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <span class="close-btn" onclick="closeModal()">×</span>
       <h3 id="modalTitle">Info Title</h3>
       <p id="modalText">Detailed information goes here.</p>
     </div>
   </div>
 
-  <!-- Mixer Grinder Section -->
   <h2 class="animated-heading">MIXER GRINDER</h2>
-  <div style="text-align:center;"><img style="width:50%; max-width:300px;" src="MIXER.png" alt="Mixer"></div>
+  <div class="product-img-wrap"><img src="MIXER.png" alt="Mixer"></div>
   <div class="service-card">
-    <h3 style="margin: 0 0 4px 0; font-size: 20px; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+    <h3 style="margin: 0 0 4px 0; font-size: 18px; color: #0f172a; display: flex; align-items: center; gap: 8px;">
       <span>🛠️</span> Mixer Grinder & Jar Repair
     </h3>
-    <p style="margin: 0 0 16px 0; font-size: 13px; font-weight: 600; color: #0284c7; text-transform: uppercase; letter-spacing: 0.5px;">
+    <p style="margin: 0 0 12px 0; font-size: 12px; font-weight: 600; color: #0284c7; text-transform: uppercase; letter-spacing: 0.5px;">
       We Repair All Brands & Models
     </p>
-    <ul style="list-style: none; padding: 0; margin: 0; font-size: 15px; color: #334155; line-height: 1.8;">
+    <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #334155; line-height: 1.6;">
       <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;"><span style="color: #0284c7; font-weight: bold;">✓</span> Motor Repair & Full Servicing</li>
       <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;"><span style="color: #0284c7; font-weight: bold;">✓</span> Coupler Replacement</li>
       <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;"><span style="color: #0284c7; font-weight: bold;">✓</span> Blade Replacement</li>
@@ -352,14 +362,13 @@
     </ul>
   </div>
 
-  <!-- Geyser Section -->
   <h2 class="animated-heading">GEYSER</h2>
-  <div style="text-align:center;"><img style="width:50%; max-width:300px;" src="GEYSER.png" alt="Geyser"></div>
+  <div class="product-img-wrap"><img src="GEYSER.png" alt="Geyser"></div>
   <div class="service-card">
-    <h3 style="margin: 0 0 16px 0; font-size: 20px; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+    <h3 style="margin: 0 0 12px 0; font-size: 18px; color: #0f172a; display: flex; align-items: center; gap: 8px;">
       <span>🛠️</span> Our Geyser Repair Services
     </h3>
-    <ul style="list-style: none; padding: 0; margin: 0; font-size: 15px; color: #334155; line-height: 1.8;">
+    <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #334155; line-height: 1.6;">
       <li style="margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px;">
         <span style="color: #0284c7; font-weight: bold; margin-top: 2px;">✓</span> 
         <span>Heating Element Replacement & Tank De-Scaling / Cleaning</span>
@@ -371,17 +380,16 @@
     </ul>
   </div>
 
-  <!-- Pressure Cooker Section -->
   <h2 class="animated-heading">PRESSURE COOKER</h2>
-  <div style="text-align:center;"><img style="width:70%; max-width:350px;" src="COOK.png" alt="Cooker"></div>
+  <div class="product-img-wrap"><img src="COOK.png" alt="Cooker"></div>
   <div class="service-card">
-    <h3 style="margin: 0 0 16px 0; font-size: 20px; color: #0f172a; display: flex; align-items: center; gap: 8px;">
-      <span>🛠️</span> Pressure Cooker Repair & Spare Parts
+    <h3 style="margin: 0 0 12px 0; font-size: 18px; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+      <span>🛠️</span> Pressure Cooker Repair & Parts
     </h3>
-    <p style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; color: #0284c7; text-transform: uppercase; letter-spacing: 0.5px;">
+    <p style="margin: 0 0 10px 0; font-size: 12px; font-weight: 600; color: #0284c7; text-transform: uppercase; letter-spacing: 0.5px;">
       🔧 Spare Parts & Replacements
     </p>
-    <ul style="list-style: none; padding: 0; margin: 0; font-size: 15px; color: #334155; line-height: 1.8;">
+    <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #334155; line-height: 1.6;">
       <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;"><span style="color: #0284c7; font-weight: bold;">✓</span> New Whistle (Weight)</li>
       <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;"><span style="color: #0284c7; font-weight: bold;">✓</span> Handles Replacement</li>
       <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;"><span style="color: #0284c7; font-weight: bold;">✓</span> Cooker Gaskets (Rubber Rings)</li>
@@ -389,47 +397,44 @@
     </ul>
   </div>
 
-  <!-- Wet Grinder Section -->
   <h2 class="animated-heading">WET GRINDER</h2>
-  <div style="text-align:center;"><img style="width:50%; max-width:300px;" src="GRANDER.png" alt="Wet Grinder"></div>
+  <div class="product-img-wrap"><img src="GRANDER.png" alt="Wet Grinder"></div>
   <div class="service-card">
-    <h3 style="margin: 0 0 16px 0; font-size: 22px; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+    <h3 style="margin: 0 0 12px 0; font-size: 18px; color: #0f172a; display: flex; align-items: center; gap: 8px;">
       <span>🛠️</span> Wet Grinder Repair
     </h3>
-    <ul style="list-style: none; padding: 0; margin: 0; font-size: 16px; color: #334155; line-height: 1.8;">
+    <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #334155; line-height: 1.6;">
       <li style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #0284c7; font-weight: bold;">✓</span> Motor repair & belt replacement</li>
       <li style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;"><span style="color: #0284c7; font-weight: bold;">✓</span> Switch, wire & capacitor fixes</li>
       <li style="display: flex; align-items: center; gap: 8px;"><span style="color: #0284c7; font-weight: bold;">✓</span> Complete servicing & overhaul</li>
     </ul>
   </div>
 
-  <!-- Iron Section -->
   <h2 class="animated-heading">IRON</h2>
-  <div style="text-align:center;"><img style="width:50%; max-width:300px;" src="IORN.png" alt="Iron"></div>
+  <div class="product-img-wrap"><img src="IORN.png" alt="Iron"></div>
   <div class="service-card">
-    <h3 style="margin: 0 0 4px 0; font-size: 20px; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+    <h3 style="margin: 0 0 4px 0; font-size: 18px; color: #0f172a; display: flex; align-items: center; gap: 8px;">
       <span>🛠️</span> Iron Box Repair Services
     </h3>
-    <p style="margin: 0 0 16px 0; font-size: 13px; font-weight: 600; color: #0284c7; text-transform: uppercase; letter-spacing: 0.5px;">
+    <p style="margin: 0 0 12px 0; font-size: 12px; font-weight: 600; color: #0284c7; text-transform: uppercase; letter-spacing: 0.5px;">
       Dry & Steam Irons Serviced
     </p>
-    <ul style="list-style: none; padding: 0; margin: 0; font-size: 15px; color: #334155; line-height: 1.8;">
+    <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #334155; line-height: 1.6;">
       <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;"><span style="color: #0284c7; font-weight: bold;">✓</span> Power Cord Cable Replacement & Fixes</li>
       <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;"><span style="color: #0284c7; font-weight: bold;">✓</span> Thermal Fuse & Indicator Light Fixes</li>
     </ul>
   </div>
 
-  <!-- Electric Kettle Section -->
   <h2 class="animated-heading">ELECTRIC KETTLE</h2>
-  <div style="text-align:center;"><img style="width:50%; max-width:300px;" src="KETTLE.png" alt="Kettle"></div>
+  <div class="product-img-wrap"><img src="KETTLE.png" alt="Kettle"></div>
   <div class="service-card">
-    <h3 style="margin: 0 0 4px 0; font-size: 20px; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+    <h3 style="margin: 0 0 4px 0; font-size: 18px; color: #0f172a; display: flex; align-items: center; gap: 8px;">
       <span>🛠️</span> Electric Kettle Repair Services
     </h3>
-    <p style="margin: 0 0 16px 0; font-size: 13px; font-weight: 600; color: #0284c7; text-transform: uppercase; letter-spacing: 0.5px;">
+    <p style="margin: 0 0 12px 0; font-size: 12px; font-weight: 600; color: #0284c7; text-transform: uppercase; letter-spacing: 0.5px;">
       All Brands & Models Serviced
     </p>
-    <ul style="list-style: none; padding: 0; margin: 0; font-size: 15px; color: #334155; line-height: 1.8;">
+    <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #334155; line-height: 1.6;">
       <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;"><span style="color: #0284c7; font-weight: bold;">✓</span> Heating Element Replacement</li>
       <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;"><span style="color: #0284c7; font-weight: bold;">✓</span> On/Off Switch & Thermostat Fix</li>
       <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;"><span style="color: #0284c7; font-weight: bold;">✓</span> Power Base & Cord Cable Replacement</li>
@@ -437,17 +442,16 @@
     </ul>
   </div>
 
-  <!-- Rice Cooker Section -->
   <h2 class="animated-heading">RICE COOKER</h2>
-  <div style="text-align:center;"><img style="width:50%; max-width:300px;" src="RICE.png" alt="Rice Cooker"></div>
+  <div class="product-img-wrap"><img src="RICE.png" alt="Rice Cooker"></div>
   <div class="service-card">
-    <h3 style="margin: 0 0 4px 0; font-size: 20px; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+    <h3 style="margin: 0 0 4px 0; font-size: 18px; color: #0f172a; display: flex; align-items: center; gap: 8px;">
       <span>🛠️</span> Rice Cooker Repair Services
     </h3>
-    <p style="margin: 0 0 16px 0; font-size: 13px; font-weight: 600; color: #0284c7; text-transform: uppercase; letter-spacing: 0.5px;">
+    <p style="margin: 0 0 12px 0; font-size: 12px; font-weight: 600; color: #0284c7; text-transform: uppercase; letter-spacing: 0.5px;">
       All Brands & Models Serviced
     </p>
-    <ul style="list-style: none; padding: 0; margin: 0; font-size: 15px; color: #334155; line-height: 1.8;">
+    <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #334155; line-height: 1.6;">
       <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;"><span style="color: #0284c7; font-weight: bold;">✓</span> Thermostat & Magnetic Switch Fix</li>
       <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;"><span style="color: #0284c7; font-weight: bold;">✓</span> Thermal Fuse & Indicator Light Repair</li>
       <li style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;"><span style="color: #0284c7; font-weight: bold;">✓</span> Power Socket & Cord Cable Replacement</li>
