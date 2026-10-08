@@ -301,11 +301,74 @@
   </header>
   <hr style="width: 100%; border: 0; border-top: 1px solid #ccc; margin: 0;">
 
-  <div style="text-align: center; width: 100%;">
-    <a href="https://maps.app.goo.gl/avmLoUqZ2MuzGi839" class="animated-location-btn" target="_blank" rel="noopener">
-      📍 LOCATION
+<!-- Container holding both corner buttons -->
+<div class="corner-buttons-container">
+    <!-- Location Button (Left Corner) -->
+    <a href="https://maps.app.goo.gl/avmLoUqZ2MuzGi839" class="custom-btn location-btn" target="_blank" rel="noopener">
+        📍 LOCATION
     </a>
-  </div>
+
+    <!-- Feedback Button (Right Corner) -->
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScmE1JhhH_jgH0OYAaVcfbp9uRo2OGSssTP6MD25NRVfyWGLQ/viewform?usp=publish-editor" class="custom-btn feedback-btn" target="_blank" rel="noopener noreferrer">
+        💬 FEEDBACK
+    </a>
+</div>
+
+<!-- Styles -->
+<style>
+.corner-buttons-container {
+    display: flex;
+    justify-content: space-between; /* Pushes one item to the far left, the other to the far right */
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.custom-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: pulseGlow 2s infinite ease-in-out; /* Continuous smooth animation */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Location Button Styling */
+.location-btn {
+    background-color: #3B82F6; /* Blue */
+}
+
+/* Feedback Button Styling */
+.feedback-btn {
+    background-color: #10B981; /* Green */
+}
+
+/* Hover effects */
+.custom-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Continuous Pulse Animation */
+@keyframes pulseGlow {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+</style>
 
   <div class="slider-container">
     <div class="slider-track" id="sliderTrack">
