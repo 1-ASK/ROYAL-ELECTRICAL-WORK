@@ -26,6 +26,18 @@
       100% { background-position: 0% 50%; }
     }
 
+    @keyframes pulseGlow {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+      100% { transform: scale(1); }
+    }
+
     body {
       background-color: #f4f4f9;
       font-family: 'Segoe UI', system-ui, sans-serif;
@@ -38,6 +50,7 @@
       overflow-x: hidden;
     }
 
+    /* Header Styling */
     .site-header-v3 {
       position: relative;
       width: 100%;
@@ -84,35 +97,39 @@
       filter: drop-shadow(0 0 10px rgba(0, 255, 102, 0.7));
     }
 
-    @keyframes pulseGlow {
-      0% { box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.6); }
-      70% { box-shadow: 0 0 0 10px rgba(79, 70, 229, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(79, 70, 229, 0); }
-    }
-
-    .animated-location-btn {
-      display: inline-flex;
+    /* Corner Buttons */
+    .corner-buttons-container {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      gap: 8px;
+      width: 100%;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+
+    .custom-btn {
+      display: inline-block;
       padding: 12px 24px;
-      font-size: 16px;
-      font-weight: 600;
-      color: #ffffff;
-      background: linear-gradient(135deg, #4f46e5, #06b6d4);
-      text-decoration: none;
       border-radius: 30px;
-      transition: transform 0.2s ease, background 0.3s ease;
-      animation: pulseGlow 2s infinite;
-      margin: 20px auto;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      animation: pulseGlow 2s infinite ease-in-out;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.02); }
-      100% { transform: scale(1); }
+    .location-btn { background-color: #3B82F6; }
+    .feedback-btn { background-color: #10B981; }
+
+    .custom-btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
 
+    /* Section Headings */
     .animated-heading {
       text-align: center;
       text-decoration: underline;
@@ -185,8 +202,8 @@
     }
 
     .dot {
-      width: 10px;
       height: 10px;
+      width: 10px;
       background-color: rgba(255, 255, 255, 0.5);
       border-radius: 50%;
       cursor: pointer;
@@ -301,88 +318,28 @@
   </header>
   <hr style="width: 100%; border: 0; border-top: 1px solid #ccc; margin: 0;">
 
-<!-- Container holding both corner buttons -->
-<div class="corner-buttons-container">
-    <!-- Location Button (Left Corner) -->
+  <!-- Container holding both corner buttons -->
+  <div class="corner-buttons-container">
     <a href="https://maps.app.goo.gl/avmLoUqZ2MuzGi839" class="custom-btn location-btn" target="_blank" rel="noopener">
-        📍 LOCATION
+      📍 LOCATION
     </a>
-
-    <!-- Feedback Button (Right Corner) -->
     <a href="https://docs.google.com/forms/d/e/1FAIpQLScmE1JhhH_jgH0OYAaVcfbp9uRo2OGSssTP6MD25NRVfyWGLQ/viewform?usp=publish-editor" class="custom-btn feedback-btn" target="_blank" rel="noopener noreferrer">
-        💬 FEEDBACK
+      💬 FEEDBACK
     </a>
-</div>
+  </div>
 
-<!-- Styles -->
-<style>
-.corner-buttons-container {
-    display: flex;
-    justify-content: space-between; /* Pushes one item to the far left, the other to the far right */
-    align-items: center;
-    width: 100%;
-    padding: 15px;
-    box-sizing: border-box;
-}
-
-.custom-btn {
-    display: inline-block;
-    padding: 12px 24px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    color: white;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    animation: pulseGlow 2s infinite ease-in-out; /* Continuous smooth animation */
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-/* Location Button Styling */
-.location-btn {
-    background-color: #3B82F6; /* Blue */
-}
-
-/* Feedback Button Styling */
-.feedback-btn {
-    background-color: #10B981; /* Green */
-}
-
-/* Hover effects */
-.custom-btn:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Continuous Pulse Animation */
-@keyframes pulseGlow {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.03);
-        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-</style>
-
+  <!-- Slider Section -->
   <div class="slider-container">
     <div class="slider-track" id="sliderTrack">
-      <div class="slide" data-title="D-LOCK NEW JAR'S Available" data-info="1. SMALL JAR (Available Now)
-2. MEDIUM JAR (Available Now)
-3. LARGE JAR (Available Now).">
-        <img src="jars.png" alt="D-LOCK NEW JAR'S">
-        <div class="slide-title">D-LOCK NEW JAR'S</div>
+      <div class="slide" data-title="D-LOCK NEW JARS Available" data-info="1. SMALL JAR (Available Now)&#10;2. MEDIUM JAR (Available Now)&#10;3. LARGE JAR (Available Now)">
+        <img src="jars.png" alt="D-LOCK NEW JARS">
+        <div class="slide-title">D-LOCK NEW JARS</div>
       </div>
       <div class="slide" data-title="BULLET JAR (D-LOCK)" data-info="NEW bullet jar available for NORMAL mixer which has 2 LOCK (d-lock).">
         <img src="jarss.png" alt="BULLET JAR (D-LOCK)">
         <div class="slide-title">BULLET JAR (D-LOCK)</div>
       </div>
-      <div class="slide" data-title="BULLET MIXER NEW JAR" data-info="NEW JAR available which fix only to BULLET MIXER.">
+      <div class="slide" data-title="BULLET MIXER NEW JAR" data-info="NEW JAR available which fits only to BULLET MIXER.">
         <img src="bj.png" alt="BULLET MIXER NEW JAR">
         <div class="slide-title">BULLET MIXER NEW JAR</div>
       </div>
@@ -390,22 +347,24 @@
         <img src="bp.png" alt="BULLET MIXER SPARE PARTS">
         <div class="slide-title">BULLET MIXER SPARE PARTS</div>
       </div>
-      <div class="slide" data-title="JAR CAP'S AND LUBBER'S" data-info="Mixer new jar CAP'S and LUBBER'S available.">
-        <img src="cap.png" alt="MIXER JAR CAP'S AND LUBBER'S">
-        <div class="slide-title">JAR CAP'S AND LUBBER'S</div>
+      <div class="slide" data-title="JAR CAPS AND RUBBERS" data-info="Mixer new jar CAPS and RUBBER GASKETS available.">
+        <img src="cap.png" alt="MIXER JAR CAPS AND RUBBERS">
+        <div class="slide-title">JAR CAPS AND RUBBERS</div>
       </div>
     </div>
     <div class="dots-container" id="dotsContainer"></div>
   </div>
 
+  <!-- Info Modal -->
   <div class="modal-overlay" id="infoModal">
     <div class="modal-card">
-      <span class="close-btn" onclick="closeModal()">×</span>
+      <span class="close-btn" onclick="closeModal()">&times;</span>
       <h3 id="modalTitle">Info Title</h3>
       <p id="modalText">Detailed information goes here.</p>
     </div>
   </div>
 
+  <!-- Products & Services -->
   <h2 class="animated-heading">MIXER GRINDER</h2>
   <div class="product-img-wrap"><img src="MIXER.png" alt="Mixer"></div>
   <div class="service-card">
@@ -522,6 +481,7 @@
     </ul>
   </div>
 
+  <!-- Page Slider & Modal Logic -->
   <script>
     const track = document.getElementById('sliderTrack');
     const slides = document.querySelectorAll('.slide');
@@ -593,6 +553,10 @@
 
     startAutoSlide();
   </script>
+
+  <!-- Botpress Chatbot Integration -->
+  <script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2026/10/14/14/20261014142511-S5O2IH45.js" defer></script>
 
 </body>
 </html>
